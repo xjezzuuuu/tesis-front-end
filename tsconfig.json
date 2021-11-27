@@ -23,10 +23,13 @@
       "dom"
     ],
     "paths": {
+      "@about/*": ["src/app/modules/about/*"],
+      "@adopts/*": ["src/app/modules/adopts/*"],
       "@app/*": ["src/app/*"],
-      "@auth/*": ["src/app/core/auth/*"],
+      "@auth/*": ["src/app/modules/auth/*"],
       "@config/*": ["src/app/configs/*"],
       "@core/*": ["src/app/core/*"],
+      "@contact/*": ["src/app/modules/contact/*"],
       "@environment/*": ["src/environments/*"],
       "@home/*": ["src/app/modules/home/*"],
       "@shared/*": ["src/app/shared/*"], 

@@ -6,10 +6,14 @@ import { AppComponent } from '@app/app.component';
 import { CoreModule } from '@app/core/core.module';
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { LoginComponent } from './mocules/auth/pages/login/login.component';
+import { RegisterComponent } from './mocules/auth/pages/register/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
