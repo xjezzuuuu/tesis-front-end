@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class AdoptsComponent implements OnInit {
+  title: string = "Adopciones";
+  image: string = "/assets/img/bg/breadcrumb_bg.jpg"
 
   constructor() { }
 
