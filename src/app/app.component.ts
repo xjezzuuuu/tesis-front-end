@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
       $.getScript('/assets/js/jquery.nice-select.min.js')
       $.getScript('/assets/js/jquery-ui.min.js')
       $.getScript('/assets/js/jquery.appear.js')
-      $.getScript('/assets/js/slick.min.js')
       $.getScript('/assets/js/wow.min.js')
       $.getScript('/assets/js/plugins.js')
       $.getScript('/assets/js/main.js')

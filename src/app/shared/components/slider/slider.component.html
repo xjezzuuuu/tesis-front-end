@@ -1,0 +1,24 @@
+<section class="slider-area">
+  <ngx-slick-carousel class="slider-active" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let slide of sliders" class="single-slider slider-bg d-flex align-items-center" style="background-image: url('{{slide.img}}');">
+          <div class="container custom-container">
+              <div class="row">
+                  <div class="col-xl-5 col-lg-7 col-md-10">
+                      <div class="slider-content">
+                          <div class="slider-title">
+                              <h2 class="title" data-animation="fadeInUpBig" data-delay=".2s" data-duration="1.2s" [innerHTML]="slide.title"></h2>
+                          </div>
+                          <div class="slider-desc">
+                              <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s" [innerHTML]="slide.description"></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="slider-shape"><img src="/assets/img/slider/slider_shape01.png" alt=""></div>
+  <div class="slider-shape shape-two"><img src="/assets/img/slider/slider_shape02.png" alt=""></div>
+      </div>
+</ngx-slick-carousel>
+</section>
