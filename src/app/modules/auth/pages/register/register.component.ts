@@ -1,36 +1,27 @@
 import { Component } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-login',
   templateUrl: './register.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class RegisterComponent {
+  first_name = '';
+  last_name = '';
+  phone = '';
+  email = '';
+  password = '';
 
-  user = {
-    roles_id: 2,
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    phone: '',
-  }
 
   miFormulario: FormGroup = this.fb.group({
-
-    name: ['', [Validators.required]],
-    adress: ['', [Validators.required]],
-    phone: ['', [Validators.required, Validators.maxLength(9)]],
+    first_name: ['', [Validators.required, Validators.required]],
+    last_name: ['', [Validators.required, Validators.required]],
+    phone: ['', [Validators.required, Validators.required]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
-
+    password: ['', [Validators.required, Validators.minLength(4)]],
   });
 
-  constructor(private fb: FormBuilder) { }
-  
-  register() {
-  };
-
+  constructor(private fb: FormBuilder) {}
+  register() {}
 }

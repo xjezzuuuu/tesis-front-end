@@ -15,10 +15,6 @@ export class LoginComponent {
     password: ['', [Validators.required, Validators.minLength(4)]],
   });
 
-  constructor(
-    private fb: FormBuilder) {}
-  login() {
-  }
-
-  getRoles() {}
+  constructor(private fb: FormBuilder) {}
+  login() {}
 }
