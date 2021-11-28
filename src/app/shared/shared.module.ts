@@ -5,13 +5,15 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { AncientPetsCarouselComponent } from './components/ancient-pets-carousel/ancient-pets-carousel.component';
 
 
 
 @NgModule({
   declarations: [
     BreadcrumbComponent,
-    SliderComponent
+    SliderComponent,
+    AncientPetsCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { SliderComponent } from './components/slider/slider.component';
   ],
   exports: [
     BreadcrumbComponent,
-    SliderComponent
+    SliderComponent,
+    AncientPetsCarouselComponent
   ]
 })
 export class SharedModule { }

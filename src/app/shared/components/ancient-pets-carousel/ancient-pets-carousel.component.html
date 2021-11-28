@@ -1,0 +1,31 @@
+<div class="container custom-container">
+    <ngx-slick-carousel
+      class="row adopt-active"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let carousel of ancientPets" class="col-xl-3">
+        <div class="adoption-item">
+          <div class="adopt-thumb">
+            <a href="breeder-details.html"
+              ><img src="{{carousel.img}}" alt=""
+            /></a>
+            <span class="status">Nueva</span>
+          </div>
+          <div class="adopt-content">
+            <div class="adopt-date">
+              <i class="far fa-calendar-alt"></i> Nacimiento : {{carousel.birth}}
+            </div>
+            <h3 class="title">
+              <a href="breeder-details.html">{{carousel.title}}</a>
+            </h3>
+            <p>{{carousel.description}}</p>
+            <a [routerLink]="[carousel.link]" class="read-more"
+              >Read More <img src="/assets/img/icon/pawprint.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  
