@@ -22,7 +22,7 @@
             <div class="form-grp">
               <label for="first_name">Nombre <span>*</span></label>
               <input
-                [(ngModel)]="first_name"
+                [(ngModel)]="user.first_name"
                 type="text"
                 formControlName="first_name"
                 id="first_name"
@@ -32,7 +32,7 @@
             <div class="form-grp">
               <label for="first_name">Apellidos <span>*</span></label>
               <input
-                [(ngModel)]="last_name"
+                [(ngModel)]="user.last_name"
                 type="text"
                 formControlName="last_name"
                 id="last_name"
@@ -42,7 +42,7 @@
             <div class="form-grp">
               <label for="first_name">Telefono <span>*</span></label>
               <input
-                [(ngModel)]="phone"
+                [(ngModel)]="user.phone"
                 type="text"
                 formControlName="phone"
                 id="phone"
@@ -52,7 +52,7 @@
             <div class="form-grp">
               <label for="email">Email <span>*</span></label>
               <input
-                [(ngModel)]="email"
+                [(ngModel)]="user.email"
                 type="email"
                 formControlName="email"
                 id="email"
@@ -62,7 +62,7 @@
             <div class="form-grp">
               <label for="password">Contraseña <span>*</span></label>
               <input
-                [(ngModel)]="password"
+                [(ngModel)]="user.password"
                 type="password"
                 formControlName="password"
                 id="password"

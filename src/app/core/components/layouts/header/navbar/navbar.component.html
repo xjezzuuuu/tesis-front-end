@@ -34,18 +34,42 @@
             </div>
             <div class="header-action d-none d-md-block">
               <ul>
-                <li class="header-search">
-                  <a href="#"><i class="flaticon-search"></i></a>
-                </li>
-                <li class="header-btn">
+                <li *ngIf="isLogged()" class="menu-item-has-children">
                   <a
-                    [routerLink]="['auth/login']"
-                    routerLinkActive="router-link-active"
-                    class="btn"
-                    >Ingresar
-                    <img src="../assets/img/icon/w_pawprint.png" alt=""
+                    ><img
+                      class="rounded-circle"
+                      alt="100x100"
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                      data-holder-rendered="true"
+                      width="40"
                   /></a>
+                  <ul class="submenu">
+                    <li><a [routerLink]="['/contact']">Mis publicaciones</a></li>
+                    <li><a (click)="logout()">Salir</a></li>
+                  </ul>
                 </li>
+                <ng-container *ngIf="!isLogged(); else loggedIn">
+                  <li class="header-btn">
+                    <a
+                      [routerLink]="['auth/login']"
+                      routerLinkActive="router-link-active"
+                      class="btn"
+                      >Ingresar
+                      <img src="../assets/img/icon/w_pawprint.png" alt=""
+                    /></a>
+                  </li>
+                </ng-container>
+                <ng-template #loggedIn>
+                  <li class="header-btn">
+                    <a
+                      [routerLink]="['adoptions']"
+                      routerLinkActive="router-link-active"
+                      class="btn"
+                      >Adoptar
+                      <img src="../assets/img/icon/w_pawprint.png" alt=""
+                    /></a>
+                  </li>
+                </ng-template>
               </ul>
             </div>
           </nav>
