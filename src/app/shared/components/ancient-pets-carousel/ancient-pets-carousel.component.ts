@@ -1,12 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostsService } from '../../../core/services/posts.service';
 
 @Component({
   selector: 'app-ancient-pets-carousel',
   templateUrl: './ancient-pets-carousel.component.html',
   styles: [],
 })
-export class AncientPetsCarouselComponent implements OnInit {
-  @Input('imgs') ancientPets: any;
+export class AncientPetsCarouselComponent implements OnInit, OnChanges {
+  @Input('id') id!: number;
+  ancientPets: any
 
   slideConfig = {
     dots: false,
@@ -19,7 +22,7 @@ export class AncientPetsCarouselComponent implements OnInit {
       '<button type="button" class="slick-prev"><img src="/assets/img/icon/arrow.png" /></button>',
     nextArrow:
       '<button type="button" class="slick-next"><img src="/assets/img/icon/arrow.png" /></button>',
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
       {
@@ -59,7 +62,18 @@ export class AncientPetsCarouselComponent implements OnInit {
     ],
   };
 
-  constructor() {}
+  constructor(private _route: ActivatedRoute, private _postService: PostsService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    
+    if (changes) {
+      this._postService.getAllExcept(this.id).subscribe((posts) => {
+        this.ancientPets = posts;
+      } );
+    }
+  }
 }

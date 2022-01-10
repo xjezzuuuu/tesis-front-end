@@ -11,7 +11,7 @@ import { User } from '../models/user.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  private BASE_URL: string = `${environment.apiURL}/auth`;
+  private BASE_URL: string = `${environment.api_url}/auth`;
   _user!: User;
 
   constructor(

@@ -1,0 +1,244 @@
+<!-- main-area -->
+<main>
+  <!-- breadcrumb-area -->
+  <app-breadcrumb [title]="title" [image]="image"></app-breadcrumb>
+  <!-- breadcrumb-area-end -->
+
+  <!-- breeder-details-area -->
+  <section class="breeder-details-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="breeder-details-content">
+            <h4 class="title">{{ post.title }}</h4>
+            <p>
+              {{ post.description }}
+            </p>
+            <div class="breeder-details-img">
+              <img
+                src="http://localhost:3000/images/{{ post.pet.images[0].name }}"
+                alt=""
+              />
+            </div>
+            <h4 class="title">Biografia</h4>
+            <p>
+              {{ post.pet.story }}
+            </p>
+            <div class="breeder-dog-info">
+              <h5 class="title">Información de la mascota</h5>
+              <div class="row">
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Tipo:</h6>
+                    <span>{{ post.pet.type }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Raza:</h6>
+                    <span>{{ post.pet.race }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Género:</h6>
+                    <span>{{ post.pet.sex }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Edad:</h6>
+                    <span>{{ post.pet.age }} años</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Tamaño:</h6>
+                    <span>{{ post.pet.size }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Caracter:</h6>
+                    <span>{{ post.pet.character }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Social:</h6>
+                    <span>{{ post.pet.social }}</span>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6">
+                  <div class="breeder-info-item">
+                    <h6>Energia:</h6>
+                    <span>{{ post.pet.energy }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <aside class="breeder-sidebar">
+            <div class="widget breeder-widget">
+              <div class="breeder-widget-title mb-20">
+                <h5 class="title">Información de contacto</h5>
+              </div>
+              <form action="#" class="sidebar-find-pets">
+                <label for="">Nombre</label>
+                <div class="form-grp">
+                  <i class="flaticon-location"></i>
+                  <input
+                    type="text"
+                    placeholder="{{ post.user.first_name }}{{
+                      post.user.last_name
+                    }}"
+                    disabled
+                  />
+                </div>
+                <label for="">Email</label>
+                <div class="form-grp">
+                  <i class="flaticon-location"></i>
+                  <input
+                    type="text"
+                    placeholder="{{ post.user.email }}"
+                    disabled
+                  />
+                </div>
+                <label for="">Teléfono</label>
+                <div class="form-grp">
+                  <i class="flaticon-location"></i>
+                  <input
+                    type="text"
+                    placeholder="{{ post.user.phone }}"
+                    disabled
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="widget sidebar-newsletter">
+              <div class="sn-icon">
+                <img src="/assets/img/icon/sn_icon.png" alt="" />
+              </div>
+              <div class="sn-title">
+                <h4 class="title">Subscribe Newsletter</h4>
+                <p>Sign-up For Latest News</p>
+              </div>
+              <form action="#" class="sn-form">
+                <input type="text" placeholder="Enter Your Email" />
+                <button class="btn">subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breeder-details-area-end -->
+
+  <!-- faq-area -->
+  <section class="faq-area faq-two-bg">
+    <div class="faq-two-img"></div>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-xl-7 col-lg-6">
+          <div class="faq-wrapper">
+            <div class="section-title white-title mb-35">
+              <h5 class="sub-title">Preguntas frecuentes</h5>
+              <h2 class="title">Como adoptar?</h2>
+            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Paso 1
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Si te haz interezado por esta mascota, ponte en contacto con
+                    el dueño.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Paso 2
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Una vez hecho el contacto procede a instaurar los terminos
+                    del acuerdo.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Paso 3
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseThree"
+                  class="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Listo, ya puedes hacerte cargo de tu nueva mascota con todo
+                    el sentido y responsabilidad!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-shape">
+      <img src="/assets/img/images/faq_shape.png" alt="" />
+    </div>
+  </section>
+  <!-- faq-area-end -->
+</main>
+<!-- main-area-end -->

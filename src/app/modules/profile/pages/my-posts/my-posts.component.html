@@ -1,0 +1,68 @@
+<!-- main-area -->
+<main>
+  <!-- breadcrumb-area -->
+  <app-breadcrumb [title]="title" [image]="image"></app-breadcrumb>
+  <!-- breadcrumb-area-end -->
+
+  <!-- adoption-shop-area -->
+  <section class="adoption-shop-area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9">
+          <div class="section-title text-center mb-65">
+            <div class="section-icon">
+              <img src="/assets/img/icon/pawprint.png" alt="" />
+            </div>
+            <h5 class="sub-title">Conoce a tus mascotas en adopción</h5>
+            <h2 class="title">Mascotas en adopción</h2>
+            <p>
+              Aquí puedes ver las mascotas que tienes disponibles para su
+              adopción.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6" *ngFor="let post of posts">
+          <div class="adoption-shop-item">
+            <div class="adoption-shop-thumb">
+              <img
+                src="http://localhost:3000/images/{{ post.pet.images[0].name }}"
+                style="width: 380px; height: 381px"
+                alt=""
+              />
+              <a [routerLink]="['/adoptions/', post.id]" class="btn"
+                >Adoptar <img src="/assets/img/icon/w_pawprint.png" alt=""
+              /></a>
+            </div>
+            <div class="adoption-shop-content">
+              <h4 class="title">
+                <a [routerLink]="['/adoptions/', post.id]">{{
+                  post.pet.name
+                }}</a>
+              </h4>
+              <div class="adoption-meta">
+                <ul>
+                  <li>
+                    <i class="fas fa-cog"></i
+                    ><a href="#">{{ post.pet.race }}</a>
+                  </li>
+                  <li *ngIf="post.pet.age > 1; else oneYear">
+                    <i class="far fa-calendar-alt"></i> {{ post.pet.age }} años
+                  </li>
+                  <ng-template #oneYear>
+                    <li>
+                      <i class="far fa-calendar-alt"></i> {{ post.pet.age }} año
+                    </li>
+                  </ng-template>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- adoption-shop-area-end -->
+</main>
+<!-- main-area-end -->

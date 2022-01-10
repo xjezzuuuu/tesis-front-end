@@ -1,0 +1,231 @@
+<!-- main-area -->
+<main>
+  <!-- breadcrumb-area -->
+  <app-breadcrumb [title]="title" [image]="image"></app-breadcrumb>
+  <!-- breadcrumb-area-end -->
+
+  <section class="mt-10 mb-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-9">
+          <div class="section-title text-center mb-40">
+            <div class="section-icon">
+              <img src="/assets/img/icon/pawprint.png" alt="" />
+            </div>
+            <div class="contact-title mb-20">
+              <h2 class="title">Crear publicación<span>.</span></h2>
+            </div>
+            <p>Estas a un paso de ofrecer un hogar y mucho amor.</p>
+          </div>
+          <div class="col-xl-12 col-lg-9">
+            <form
+              [formGroup]="miFormulario"
+              class="contact-form"
+              autocomplete="off"
+              (ngSubmit)="register()"
+            >
+              <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+                <ng-wizard-step
+                  [title]="'Paso 1'"
+                  [description]="'Ingrese la información de la publicación'"
+                  [canEnter]="isValidTypeBoolean"
+                  [canExit]="isValidFunctionReturnsBoolean.bind(this)"
+                >
+                  <div class="form-grp">
+                    <label for="title">Título <span>*</span></label>
+                    <input
+                      type="text"
+                      formControlName="title"
+                      placeholder="Doy en adopcion perrito"
+                    />
+                  </div>
+                  <div class="form-grp">
+                    <label for="description">Descripción <span>*</span></label>
+                    <textarea
+                      type="text"
+                      formControlName="description"
+                      placeholder="Se da en adopción a un perrito"
+                    ></textarea>
+                  </div>
+                  <div class="form-grp">
+                    <label for="address">Dirección <span>*</span></label>
+                    <input
+                      type="text"
+                      formControlName="address"
+                      placeholder="Doy en adopcion perrito"
+                    />
+                  </div>
+                </ng-wizard-step>
+
+                <ng-wizard-step
+                  [title]="'Paso 2'"
+                  [description]="'Ingrese la información de la mascota'"
+                >
+                  <div class="form-grp">
+                    <label class="required">Nombre </label>
+                    <input
+                      type="text"
+                      formControlName="name"
+                      id="name"
+                      placeholder="Ingrese un nombre."
+                    />
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Tipo </label>
+                    <select
+                      class="form-grp"
+                      name="type"
+                      formControlName="type"
+                      placeholder="asd"
+                    >
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Canino">Canino</option>
+                      <option value="Felino">Felino</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Raza </label>
+                    <input
+                      type="text"
+                      formControlName="race"
+                      id="race"
+                      placeholder="Ingrese la raza."
+                    />
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Edad </label>
+                    <input
+                      type="text"
+                      formControlName="age"
+                      id="age"
+                      placeholder="Ingrese la edad."
+                    />
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Sexo </label>
+                    <select class="form-grp" name="sex" formControlName="sex">
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Macho">Macho</option>
+                      <option value="Hembra">Hembra</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Talla </label>
+                    <select name="select" formControlName="size" id="size">
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Pequeño">Pequeño</option>
+                      <option value="Mediano">Mediano</option>
+                      <option value="Grande">Grande</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Historia </label>
+                    <textarea
+                      name="textarea"
+                      type="text"
+                      formControlName="story"
+                      id="story"
+                      placeholder="Ingrese aquí una breve historia sobre la mascota..."
+                    >
+                    </textarea>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Temperamento </label>
+                    <select
+                      name="select"
+                      formControlName="character"
+                      id="character"
+                    >
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Muy agradable">Muy agradable</option>
+                      <option value="Agradable">Agradable</option>
+                      <option value="Poco agradable">Poco agradable</option>
+                      <option value="Agresivo">Agresivo</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Socialización </label>
+                    <select name="select" formControlName="social" id="social">
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Jugetón">Jugetón</option>
+                      <option value="Sociable">Sociable</option>
+                      <option value="Poco Sociable">Poco Sociable</option>
+                      <option value="Antisocial">Antisocial</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Energía </label>
+                    <select name="select" formControlName="energy" id="energy">
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Muy activo">Muy activo</option>
+                      <option value="Activo">Activo</option>
+                      <option value="Poco activo">Poco activo</option>
+                      <option value="Perezoso">Perezoso</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grp">
+                    <label class="required">Amistad </label>
+                    <select
+                      name="select"
+                      formControlName="friendship"
+                      id="friendship"
+                    >
+                      <option value="" selected disabled hidden>
+                        Seleccione una opción
+                      </option>
+                      <option value="Muy amistoso">Muy amistoso</option>
+                      <option value="Amistoso">Amistoso</option>
+                      <option value="Poco amistoso">Poco amistoso</option>
+                    </select>
+
+                    <div class="form-grp">
+                        <label class="required">Imagenes </label>
+                        <input
+                          type="file"
+                          formControlName="images"
+                          (change)="onFileChange($event)"
+                        />
+                        
+                      </div>
+                  </div>
+
+                  <br />
+                  <button
+                    type="submit"
+                    class="btn rounded-btn"
+                    [disabled]=""
+                  >
+                    Enviar
+                  </button>
+                </ng-wizard-step>
+              </ng-wizard>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- main-area-end -->

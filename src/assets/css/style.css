@@ -1946,7 +1946,7 @@ label {
     right: 7%;
 }
 .faq-two-bg {
-    background-image: url(../img/bg/faq_bg.jpg);
+    background-image: url(/assets/img/bg/faq_bg.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -1954,7 +1954,7 @@ label {
     z-index: 1;
 }
 .faq-two-img {
-    background-image: url(../img/images/s_faq_img.jpg);
+    background-image: url("/assets/img/faq_img.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -3620,6 +3620,7 @@ label {
     color: #f04336;
 }
 .contact-form .form-grp input,
+.contact-form .form-grp select,
 .contact-form .form-grp textarea {
     width: 100%;
     background: #f5f2eb;

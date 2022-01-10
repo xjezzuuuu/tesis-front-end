@@ -35,16 +35,9 @@
             <div class="header-action d-none d-md-block">
               <ul>
                 <li *ngIf="isLogged()" class="menu-item-has-children">
-                  <a
-                    ><img
-                      class="rounded-circle"
-                      alt="100x100"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
-                      data-holder-rendered="true"
-                      width="40"
-                  /></a>
+                  {{user.first_name}} {{user.last_name}}
                   <ul class="submenu">
-                    <li><a [routerLink]="['/contact']">Mis publicaciones</a></li>
+                    <li><a [routerLink]="['/profile/my-posts']">Mis publicaciones</a></li>
                     <li><a (click)="logout()">Salir</a></li>
                   </ul>
                 </li>
@@ -65,7 +58,7 @@
                       [routerLink]="['adoptions']"
                       routerLinkActive="router-link-active"
                       class="btn"
-                      >Adoptar
+                      >Crear publicación
                       <img src="../assets/img/icon/w_pawprint.png" alt=""
                     /></a>
                   </li>
